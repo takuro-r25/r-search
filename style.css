@@ -35,6 +35,18 @@ body {
   flex-shrink: 0; /* ★重要：スマホなど狭い画面でも潰れないようにする */
 }
 
+/* 追加：サブタイトルのデザイン */
+.site-subtitle {
+  text-align: center;
+  color: #666; /* 濃いグレーで上品に */
+  font-size: 15px; /* メインタイトルより小さく */
+  font-weight: 600; /* 少し太字にして読みやすく */
+  margin-top: -10px; /* 上のメインタイトルとの隙間を少し詰める */
+  margin-bottom: 25px; /* 下の説明文との間隔を開ける */
+  letter-spacing: 0.05em; /* 文字と文字の間隔を少し広げて美しい並びに */
+}
+
+
 /* 説明文エリア：美しいカプセルデザイン */
 .site-description-wrapper {
   background-color: #fff0f6;
