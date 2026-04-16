@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>れ・さーち - れいわ新選組 街宣・おしゃべり会 検索ツール（非公式）</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="site-title">れ・さーち</h1><div class="site-description">
+      <p>
+         れいわ新選組の街宣・おしゃべり会の中からキーワードで検索し、該当する動画部分を探し出す非公式ツールです。<br>
+
+• AND検索も可能です（例：「2025　北海道　消費税」）<br>
+• 自動要約のため不正確な場合があります<br>
+      </p>
+    </div>
+
+    <div class="search-area">
+      <input type="text" id="searchInput" placeholder="例：ガソリン 減税 （スペースで区切って複数検索）">
+      <button id="searchButton">検索</button>
+    </div>
+
+    <div id="resultsArea"></div>
+  </div>
+
+  <div id="floatingPlayer" class="floating-player" style="display: none;">
+    <div id="playerHeader" class="player-header">
+      <span class="drag-handle">≡ つまんで移動</span>
+      <button id="closePlayer">閉じる</button>
+    </div>
+    <div class="iframe-container">
+      <iframe id="youtubeIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
