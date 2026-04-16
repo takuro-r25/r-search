@@ -1,45 +1,43 @@
-/* 全体設定：モダンなフォントと柔らかな背景色 */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
-  background-color: #fbfbfb; /* ほんの少しグレーの入った柔らかな白 */
-  color: #444; /* 文字色は真っ黒ではなく濃いグレー */
+  background-color: #fbfbfb;
+  color: #444;
   margin: 0;
-  padding: 40px 20px; /* 上下の余白を広げる */
+  padding: 40px 20px;
   line-height: 1.6;
-  letter-spacing: 0.02em; /* 文字間隔を少し広げて読みやすく */
+  letter-spacing: 0.02em;
 }
 
 .container {
-  max-width: 900px; /* 少し広げる */
+  max-width: 900px;
   margin: 0 auto;
 }
 
-/* サイトタイトル：文字と肉球アイコンを並べる */
 .site-title {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px; /* 文字と肉球の間隔 */
+  gap: 12px;
   text-align: center;
   color: #e4007e;
-  font-size: 42px; /* 少し大きく */
+  font-size: 42px;
   margin-bottom: 20px;
-  font-weight: 800; /* より太く */
+  font-weight: 800;
 }
 
-/* 肉球アイコンのサイズ調整 */
+/* ★修正：肉球が潰れないようにする魔法のコード（flex-shrink: 0） */
 .paw-icon {
-  margin-top: 5px; /* 文字の高さに合わせる調整 */
+  margin-top: 5px;
+  flex-shrink: 0; 
 }
 
-/* 説明文の全体ラッパー：美しく見せるための枠 */
 .site-description-wrapper {
-  background-color: #fff0f6; /* 薄いピンク背景 */
-  border: 1px solid #ffccdf; /* 薄いピンクボーダー */
-  border-radius: 16px; /* 角をさらに丸く */
-  padding: 30px; /* 余白を広げる */
+  background-color: #fff0f6;
+  border: 1px solid #ffccdf;
+  border-radius: 16px;
+  padding: 30px;
   margin-bottom: 40px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* 非常に薄い影 */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
 }
 
 .site-description {
@@ -57,54 +55,56 @@ body {
   margin: 20px 0 0 0;
   font-size: 15px;
   display: inline-block;
-  text-align: left; /* リスト内は左寄せ */
+  text-align: left;
 }
 
 .description-points li {
   margin-bottom: 8px;
 }
 
-/* 検索エリア：白い角丸ボックスの中に収めるデザインに変更 */
+/* ★修正：検索エリア全体を完璧なカプセル型に固定 */
 .search-area {
   display: flex;
   align-items: center;
-  gap: 0; /* ボックス内は隙間をなくす */
+  background-color: white;
+  border-radius: 40px;
+  padding: 6px; /* 外枠と内枠の隙間 */
   margin-bottom: 40px;
-  background-color: white; /* 全体は白 */
-  padding: 5px; /* 内部の余白 */
-  border-radius: 40px; /* 角を完全に丸く */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* 柔らかい影 */
-  border: 1px solid #eee; /* 薄いボーダー */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  width: 100%;
 }
 
+/* ★修正：入力欄が枠を押し広げないように制御 */
 #searchInput {
   flex-grow: 1;
-  padding: 15px 25px;
-  font-size: 17px;
-  border: none; /* ボーダーをなくす */
-  background-color: transparent; /* 背景を透明に */
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
   color: #444;
+  min-width: 0; /* 文字が多くても枠を壊さない */
+  outline: none;
 }
 
-#searchInput:focus {
-  outline: none; /* 選択時の青枠をなくす */
-}
-
-/* 検索ボタン：角を丸く、アイコン付き */
+/* ★修正：検索ボタンが潰れず、はみ出さず、完璧に収まるように設定 */
 #searchButton {
+  flex-shrink: 0; /* ボタンが潰れるのを防ぐ */
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 15px 35px;
-  font-size: 17px;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 16px;
   background-color: #e4007e;
   color: white;
   border: none;
-  border-radius: 30px; /* 角を完全に丸く */
+  border-radius: 30px;
   cursor: pointer;
   font-weight: bold;
+  white-space: nowrap; /* 文字が2行になるのを防ぐ */
+  margin: 0;
   transition: background-color 0.2s, transform 0.1s;
-  margin-left: 10px; /* 入力欄との間隔 */
 }
 
 #searchButton:hover {
@@ -112,24 +112,23 @@ body {
 }
 
 #searchButton:active {
-  transform: translateY(1px); /* クリック時の凹み効果 */
+  transform: translateY(1px);
 }
 
-/* Q&Aカード：角を大きく、影を柔らかく、ホバーを強調 */
 .qa-card {
   background-color: white;
-  padding: 25px; /* 余白を広げる */
+  padding: 25px;
   margin-bottom: 20px;
-  border-radius: 16px; /* 角を大きく */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 柔らかい影 */
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
   cursor: pointer;
   transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
 .qa-card:hover {
-  background-color: #fff0f6; /* ホバー時は薄いピンク */
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* 影を強調 */
-  transform: translateY(-2px); /* 少し上に浮かせる */
+  background-color: #fff0f6;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
 }
 
 .qa-header {
@@ -142,10 +141,10 @@ body {
 }
 
 .qa-question {
-  font-weight: 800; /* より太く */
+  font-weight: 800;
   margin-bottom: 10px;
-  color: #e4007e; /* 質問はテーマピンク */
-  font-size: 19px; /* 少し大きく */
+  color: #e4007e;
+  font-size: 19px;
 }
 
 .qa-answer {
@@ -154,21 +153,19 @@ body {
   line-height: 1.7;
 }
 
-/* 浮かぶプレイヤー：よりクリーンに、閉じるボタンをアイコンに */
 .floating-player {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 360px; /* 少し大きく */
+  width: 360px;
   background-color: #fff;
-  border: none; /* ボーダーをなくす */
-  border-radius: 20px; /* 角を大きく */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* 影を大きく、柔らかく */
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   z-index: 1000;
   overflow: hidden;
 }
 
-/* プレイヤーヘッダー：ピンクベースでクリーンに */
 .player-header {
   display: flex;
   justify-content: space-between;
@@ -189,11 +186,10 @@ body {
   font-weight: 700;
 }
 
-/* 閉じるボタン：アイコンのみの洗練されたデザイン */
 #closePlayer {
   background: white;
   border: none;
-  border-radius: 50%; /* 完全に丸く */
+  border-radius: 50%;
   width: 28px;
   height: 28px;
   display: flex;
@@ -210,7 +206,7 @@ body {
 
 .iframe-container {
   width: 100%;
-  height: 203px; /* 16:9 の比率に近く */
+  height: 203px;
 }
 
 .iframe-container iframe {
