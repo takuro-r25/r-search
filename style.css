@@ -1,126 +1,180 @@
+/* 全体設定：モダンなフォントと柔らかな背景色 */
 body {
-  font-family: sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+  background-color: #fbfbfb; /* ほんの少しグレーの入った柔らかな白 */
+  color: #444; /* 文字色は真っ黒ではなく濃いグレー */
   margin: 0;
-  padding: 20px;
+  padding: 40px 20px; /* 上下の余白を広げる */
+  line-height: 1.6;
+  letter-spacing: 0.02em; /* 文字間隔を少し広げて読みやすく */
 }
 
 .container {
-  max-width: 800px;
+  max-width: 900px; /* 少し広げる */
   margin: 0 auto;
 }
 
-/* サイトタイトル（h1）の色をテーマピンクに変更 */
+/* サイトタイトル：文字と肉球アイコンを並べる */
 .site-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* 文字と肉球の間隔 */
   text-align: center;
-  color: #e4007e; /* 主役のピンク色。'ここを書き換えてください' (別のピンクにする場合など) */
-  font-size: 36px;
-  margin-bottom: 10px;
+  color: #e4007e;
+  font-size: 42px; /* 少し大きく */
+  margin-bottom: 20px;
+  font-weight: 800; /* より太く */
 }
 
-/* 追加：サイトの説明文のスタイル */
+/* 肉球アイコンのサイズ調整 */
+.paw-icon {
+  margin-top: 5px; /* 文字の高さに合わせる調整 */
+}
+
+/* 説明文の全体ラッパー：美しく見せるための枠 */
+.site-description-wrapper {
+  background-color: #fff0f6; /* 薄いピンク背景 */
+  border: 1px solid #ffccdf; /* 薄いピンクボーダー */
+  border-radius: 16px; /* 角をさらに丸く */
+  padding: 30px; /* 余白を広げる */
+  margin-bottom: 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* 非常に薄い影 */
+}
+
 .site-description {
-  text-align: center;
   color: #666;
-  font-size: 16px;
-  margin-bottom: 30px;
-  line-height: 1.6;
-  max-width: 600px;
+  font-size: 17px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
+.description-points {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  font-size: 15px;
+  display: inline-block;
+  text-align: left; /* リスト内は左寄せ */
+}
+
+.description-points li {
+  margin-bottom: 8px;
+}
+
+/* 検索エリア：角を丸く、柔らかい影 */
 .search-area {
   display: flex;
-  gap: 10px;
-  margin-bottom: 30px;
+  gap: 15px;
+  margin-bottom: 40px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 40px; /* 角を完全に丸く */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08); /* 柔らかい影 */
 }
 
 #searchInput {
   flex-grow: 1;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 15px 25px;
+  font-size: 17px;
+  border: none; /* ボーダーをなくす */
+  background-color: #f8f8f8; /* 検索窓の背景 */
+  border-radius: 30px; /* 角を丸く */
+  color: #444;
 }
 
-/* 追加：検索窓が選択された時の枠線をピンクに */
 #searchInput:focus {
-  outline: 2px solid #e4007e; /* 'ここを書き換えてください' */
-  border-color: transparent;
+  outline: 2px solid #e4007e;
+  background-color: white;
 }
 
+/* 検索ボタン：角を丸く、アイコン付き */
 #searchButton {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #e4007e; /* 検索ボタンの色。'ここを書き換えてください' */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 35px;
+  font-size: 17px;
+  background-color: #e4007e;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 30px; /* 角を完全に丸く */
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 #searchButton:hover {
-  background-color: #c0006a; /* ホバー時の少し濃いピンク。'ここを書き換えてください' */
+  background-color: #c0006a;
 }
 
+#searchButton:active {
+  transform: translateY(1px); /* クリック時の凹み効果 */
+}
+
+/* Q&Aカード：角を大きく、影を柔らかく、ホバーを強調 */
 .qa-card {
   background-color: white;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 25px; /* 余白を広げる */
+  margin-bottom: 20px;
+  border-radius: 16px; /* 角を大きく */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* 柔らかい影 */
   cursor: pointer;
-  transition: background-color 0.2s, box-shadow 0.2s;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
-/* 追加：カードをホバーした時に薄いピンクにする */
 .qa-card:hover {
-  background-color: #fff0f6; /* 'ここを書き換えてください' */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  background-color: #fff0f6; /* ホバー時は薄いピンク */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* 影を強調 */
+  transform: translateY(-2px); /* 少し上に浮かせる */
 }
 
 .qa-header {
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
+  font-weight: 700;
+  color: #888;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 8px;
+  font-size: 15px;
 }
 
 .qa-question {
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #e4007e; /* 質問の色をピンクに。'ここを書き換えてください' */
+  font-weight: 800; /* より太く */
+  margin-bottom: 10px;
+  color: #e4007e; /* 質問はテーマピンク */
+  font-size: 19px; /* 少し大きく */
 }
 
 .qa-answer {
   color: #666;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
-/* 浮かぶプレイヤーのデザイン */
+/* 浮かぶプレイヤー：よりクリーンに、閉じるボタンをアイコンに */
 .floating-player {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 320px;
+  bottom: 30px;
+  right: 30px;
+  width: 360px; /* 少し大きく */
   background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  border: none; /* ボーダーをなくす */
+  border-radius: 20px; /* 角を大きく */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* 影を大きく、柔らかく */
   z-index: 1000;
   overflow: hidden;
 }
 
-/* 追加：プレイヤーのヘッダーもピンクに */
+/* プレイヤーヘッダー：ピンクベースでクリーンに */
 .player-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #e4007e; /* 'ここを書き換えてください' */
+  background-color: #e4007e;
   color: white;
-  padding: 8px 10px;
+  padding: 10px 15px;
   cursor: grab;
   user-select: none;
 }
@@ -131,17 +185,22 @@ body {
 
 .drag-handle {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
+/* 閉じるボタン：アイコンのみの洗練されたデザイン */
 #closePlayer {
-  background: white; /* 閉じるボタンの背景を白に */
-  color: #e4007e; /* 閉じるボタンの文字色をピンクに。'ここを書き換えてください' */
+  background: white;
   border: none;
-  border-radius: 4px;
-  padding: 4px 10px;
+  border-radius: 50%; /* 完全に丸く */
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  font-weight: bold;
+  transition: background-color 0.2s;
+  padding: 0;
 }
 
 #closePlayer:hover {
@@ -150,7 +209,7 @@ body {
 
 .iframe-container {
   width: 100%;
-  height: 180px;
+  height: 203px; /* 16:9 の比率に近く */
 }
 
 .iframe-container iframe {
