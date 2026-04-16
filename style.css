@@ -7,12 +7,6 @@ body {
   padding: 40px 20px;
   line-height: 1.6;
   letter-spacing: 0.02em;
-  box-sizing: border-box; /* 枠線がサイズからはみ出さないように設定 */
-}
-
-/* すべての要素にbox-sizingを適用 */
-*, *:before, *:after {
-  box-sizing: inherit;
 }
 
 .container {
@@ -20,24 +14,25 @@ body {
   margin: 0 auto;
 }
 
-/* サイトタイトル：文字と肉球アイコンを並べる */
+/* サイトタイトル：文字と肉球画像を並べる */
 .site-title {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 12px; /* 文字と肉球の間隔 */
   text-align: center;
   color: #e4007e;
   font-size: 42px;
   margin-bottom: 20px;
   font-weight: 800;
-  letter-spacing: -0.01em;
 }
 
-/* ★修正：肉球が絶対に潰れないようにする魔法のコード（flex-shrink: 0） */
+/* ★修正：肉球画像をきれいに配置する設定 */
 .paw-icon {
-  margin-top: 5px;
-  flex-shrink: 0; 
+  width: 40px; /* 画像の幅を固定 */
+  height: auto; /* 高さは自動調整 */
+  margin-top: 5px; /* 文字の高さに合わせる調整 */
+  flex-shrink: 0; /* ★重要：スマホなど狭い画面でも潰れないようにする */
 }
 
 /* 説明文エリア：美しいカプセルデザイン */
@@ -72,7 +67,7 @@ body {
   margin-bottom: 8px;
 }
 
-/* 検索エリア：完璧なカプセルデザインを維持 */
+/* 検索エリア：完璧なカプセルデザインを維持（image_10の形式） */
 .search-area {
   display: flex;
   align-items: center;
@@ -93,11 +88,6 @@ body {
   background-color: transparent;
   color: #444;
   min-width: 0; /* 文字が多くても枠を壊さない */
-  outline: none;
-}
-
-/* 検索窓が選択された時の枠線をなくす */
-#searchInput:focus {
   outline: none;
 }
 
