@@ -242,3 +242,42 @@ body {
   width: 100%;
   height: 100%;
 }
+
+/* ==========================================
+   追加：トップへ戻るボタンのデザイン
+========================================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px; /* 動画プレイヤーと被らないように左下に配置 */
+  width: 45px;
+  height: 45px;
+  background-color: #e4007e;
+  color: white;
+  border: none;
+  border-radius: 50%; /* まん丸にする */
+  box-shadow: 0 4px 15px rgba(228, 0, 126, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* 最初は透明（見えない） */
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+  z-index: 999;
+}
+
+/* スクロールして表示される時のクラス */
+.scroll-to-top.show {
+  opacity: 1; /* 見えるようになる */
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  background-color: #c0006a;
+  transform: translateY(-3px); /* マウスを乗せると少しフワッと浮く */
+}
+
+.scroll-to-top:active {
+  transform: translateY(0);
+}
