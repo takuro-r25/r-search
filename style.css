@@ -1,10 +1,11 @@
 /* 全体設定：モダンなフォントと柔らかな背景色 */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
-  background-color: #fcfcfc; /* より白に近いクリーンな背景 */
+  /* ★修正1：背景色を少しだけ濃いグレーにして、白いカードを引き立たせる */
+  background-color: #f4f5f7; 
   color: #444;
   margin: 0;
-  padding: 50px 20px; /* 上の余白を少し増やしてゆったりと */
+  padding: 50px 20px;
   line-height: 1.6;
   letter-spacing: 0.03em;
   box-sizing: border-box;
@@ -15,7 +16,7 @@ body {
 }
 
 .container {
-  max-width: 800px; /* 少しスマートな幅に */
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -24,61 +25,61 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px; /* 肉球との距離を少し近づける */
+  gap: 8px;
   text-align: center;
   color: #e4007e;
-  font-size: 46px; /* 少し大きくして主役感を出す */
+  font-size: 46px;
   margin-top: 0;
-  margin-bottom: 5px; /* サブタイトルとの距離を詰める */
+  margin-bottom: 5px;
   font-weight: 800;
   letter-spacing: 0.05em;
 }
 
-/* ★魔法のコード：肉球の白い背景を透明化して馴染ませる */
+/* 肉球の白い背景を透明化して馴染ませる */
 .paw-icon {
   width: 38px; 
   height: auto; 
   margin-top: 8px; 
   flex-shrink: 0;
-  mix-blend-mode: multiply; /* 白い部分を透明にする魔法 */
+  mix-blend-mode: multiply; 
 }
 
 /* サブタイトル：洗練された小さな文字で中央に */
 .site-subtitle {
   display: block;
   text-align: center;
-  color: #888; /* 薄めのグレーで上品に */
-  font-size: 13px; /* 小さくして洗練さを演出 */
+  color: #888;
+  font-size: 13px;
   font-weight: 500;
   margin-top: 0;
-  margin-bottom: 40px; /* 下の説明文としっかり余白を取る */
-  letter-spacing: 0.1em; /* 字間を広げてモダンに */
+  margin-bottom: 40px;
+  letter-spacing: 0.1em;
 }
 
 /* 説明文エリア：枠線を消し、うっすらピンクの影で浮遊感を */
 .site-description-wrapper {
-  background-color: #fff7fa; /* 極めて薄いピンク */
-  border: none; /* ★枠線をあえて無くしてミニマルに */
-  border-radius: 20px; /* 丸みを少し強める */
-  padding: 35px 25px; /* 内側の余白を広げる */
+  background-color: #fff7fa; 
+  border: none; 
+  border-radius: 20px;
+  padding: 35px 25px;
   margin-bottom: 50px;
-  box-shadow: 0 8px 24px rgba(228, 0, 126, 0.04); /* ピンク色のベールのような薄い影 */
+  box-shadow: 0 8px 24px rgba(228, 0, 126, 0.04);
 }
 
 .site-description {
   color: #555;
-  font-size: 15px; /* 少し小さくして上品に */
+  font-size: 15px;
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
-  line-height: 1.8; /* 行間を広げて読みやすく */
+  line-height: 1.8;
 }
 
 .description-points {
   list-style: none;
   padding: 0;
   margin: 25px 0 0 0;
-  font-size: 14px; /* 箇条書きはさらに少し小さく */
+  font-size: 14px;
   color: #777;
   display: inline-block;
   text-align: left;
@@ -88,7 +89,7 @@ body {
   margin-bottom: 12px;
 }
 
-/* 検索エリア：シャドウをピンクがからせて統一感を出す */
+/* ★修正2：検索エリアの枠線と影を少し強調して、背景から浮かせる */
 .search-area {
   display: flex;
   align-items: center;
@@ -96,8 +97,8 @@ body {
   border-radius: 40px;
   padding: 6px; 
   margin-bottom: 50px;
-  box-shadow: 0 8px 30px rgba(228, 0, 126, 0.08); /* ピンクがかった美しい影 */
-  border: none; /* ボーダーをなくして影だけで見せる */
+  border: 1px solid #e5e7eb; /* 極薄いグレーの枠線を追加 */
+  box-shadow: 0 6px 20px rgba(228, 0, 126, 0.1); /* ピンクの影を少し濃く */
 }
 
 #searchInput {
@@ -112,7 +113,7 @@ body {
 }
 
 #searchInput::placeholder {
-  color: #bbb; /* プレースホルダーの色を薄く */
+  color: #bbb;
 }
 
 #searchButton {
@@ -121,7 +122,7 @@ body {
   align-items: center;
   justify-content: center; 
   gap: 8px;
-  padding: 14px 28px; /* ボタンを少しふっくらさせる */
+  padding: 14px 28px;
   font-size: 16px;
   background-color: #e4007e;
   color: white;
@@ -142,20 +143,22 @@ body {
   transform: translateY(1px);
 }
 
-/* 検索結果のカードデザイン（変更なし） */
+/* ★修正3：検索結果カードの枠線と影を少し強調 */
 .qa-card {
   background-color: white;
   padding: 25px;
   margin-bottom: 20px;
   border-radius: 16px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  border: 1px solid #e5e7eb; /* 極薄いグレーの枠線を追加 */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06); /* 影を少し濃く */
   cursor: pointer;
   transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 
 .qa-card:hover {
   background-color: #fff0f6;
-  box-shadow: 0 8px 25px rgba(228, 0, 126, 0.08);
+  border-color: #ffccdf; /* ホバー時に枠線も薄ピンクに */
+  box-shadow: 0 8px 25px rgba(228, 0, 126, 0.1);
   transform: translateY(-2px);
 }
 
@@ -163,7 +166,7 @@ body {
   font-weight: 700;
   color: #888;
   margin-bottom: 15px;
-  border-bottom: 1px solid #f9f9f9;
+  border-bottom: 1px solid #f0f0f0; /* 区切り線を少し見えやすく */
   padding-bottom: 8px;
   font-size: 14px;
 }
@@ -181,7 +184,15 @@ body {
   line-height: 1.7;
 }
 
-/* 浮かぶプレイヤー（変更なし） */
+/* 検索キーワードのピンクマーカー */
+mark {
+  background: linear-gradient(transparent 50%, #ffcbe6 50%);
+  color: inherit;
+  font-weight: bold;
+  padding: 0 2px;
+}
+
+/* 浮かぶプレイヤー */
 .floating-player {
   position: fixed;
   bottom: 30px;
@@ -243,52 +254,38 @@ body {
   height: 100%;
 }
 
-/* ==========================================
-   追加：トップへ戻るボタンのデザイン
-========================================== */
+/* トップへ戻るボタン */
 .scroll-to-top {
   position: fixed;
   bottom: 30px;
-  left: 30px; /* 動画プレイヤーと被らないように左下に配置 */
+  left: 30px;
   width: 45px;
   height: 45px;
   background-color: #e4007e;
   color: white;
   border: none;
-  border-radius: 50%; /* まん丸にする */
+  border-radius: 50%;
   box-shadow: 0 4px 15px rgba(228, 0, 126, 0.3);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0; /* 最初は透明（見えない） */
+  opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
   z-index: 999;
 }
 
-/* スクロールして表示される時のクラス */
 .scroll-to-top.show {
-  opacity: 1; /* 見えるようになる */
+  opacity: 1;
   visibility: visible;
 }
 
 .scroll-to-top:hover {
   background-color: #c0006a;
-  transform: translateY(-3px); /* マウスを乗せると少しフワッと浮く */
+  transform: translateY(-3px);
 }
 
 .scroll-to-top:active {
   transform: translateY(0);
 }
-
-/* ==========================================
-   追加：検索キーワードのピンクマーカー
-========================================== */
-mark {
-  background: linear-gradient(transparent 50%, #ffcbe6 50%); /* 下半分だけピンクにする魔法 */
-  color: inherit; /* 文字色はそのまま */
-  font-weight: bold; /* マーカー部分は少し太字にして目立たせる */
-  padding: 0 2px;
-}
-
